@@ -8,6 +8,25 @@ body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+#front-page-container{
+    display: grid;
+    grid-template-areas: "header" 
+                         "main" 
+                         "aside" 
+                         "footer";
+}
+header{
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+aside {
+    grid-area: aside;
+}
+footer {
+    grid-area: footer;
+}
 
 header nav a{
     color:#000;
@@ -23,7 +42,7 @@ nav{
     background-color: #d2dfe1;
     padding: 2rem;
 }
-
+/*
 #front-page-container{
     width: 100%;
     display: grid;
@@ -33,15 +52,15 @@ nav{
                         "main main aside" 
                         "footer footer footer";
     grid-gap: 1rem;
-    grid-row-gap: 1rem;*/
+    grid-row-gap: 1rem;
 
 }
 header{
-    /*grid-area: header;*/
+    /*grid-area: header;
     grid-area: 1/1/2/4;
 }
 main{
-    /*grid-area: main;*/
+    /*grid-area: main;
     grid-column-start: 1;
     grid-row-start: 2;
     grid-column-end: 3;
@@ -61,7 +80,7 @@ main{
 
     /*kunne og skrevet: 
     grid-area: col-1;
-    */
+    
     grid-area: 1/1/2/2;
 
 }
@@ -73,7 +92,7 @@ main{
 
     /*kunne og skrevet: 
     grid-area: col-2;
-    */
+    
     
 }
 #article-3{
@@ -84,25 +103,25 @@ main{
     
     /*kunne og skrevet: 
     grid-area: col-3;
-    */
+    
 
 }
 
 aside{
-    /*grid-area: aside;*/
+    /*grid-area: aside;
     grid-column-start: 3;
     grid-row-start: 2;
     grid-column-end: 4;
     grid-row-end: 3;
 }
 footer{
-    /*grid-area:footer;*/
+    /*grid-area:footer;
     grid-column-start: 1;
     grid-row-start: 3;
     grid-column-end: 4;
     grid-row-end: 4;
 }
-
+*/
 
 main article{
     /*endret vidde bredde fra hva vi gjorde 05.08*/
@@ -169,6 +188,16 @@ footer{
     color: #fff;
     padding: 3rem 2rem;
 }
-
-
-
+@media only screen and (min-width: 900px){
+    #front-page-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "header header header" 
+                            "main main aside" 
+                            "footer footer footer";
+        grid-gap: 1rem;
+        grid-row-gap: 1rem;
+    }
+}
