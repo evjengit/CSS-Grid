@@ -18,8 +18,30 @@ body{
 header{
     grid-area: header;
 }
+#main-menu{
+    position: absolute;
+    top: 125px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: #FFD1D1;
+}
+#main-menu a{
+    color: #000000;
+    padding: 1rem 0;
+    display: inline-block;
+    font-size: 1.3rem;
+}
+#main-menu li{
+    list-style: none;
+}
 main {
     grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
 }
 aside {
     grid-area: aside;
@@ -32,103 +54,28 @@ header nav a{
     color:#000;
     text-decoration: none;
 }
-
 header nav ul li a:hover{
     text-decoration: underline;
+    color: rgb(37, 205, 214);
 }
 
 nav{
     overflow: auto;
-    background-color: #d2dfe1;
+    background-color: #FFF5E4;
     padding: 2rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
-/*
-#front-page-container{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    /*grid-template-areas: "header header header" 
-                        "main main aside" 
-                        "footer footer footer";
-    grid-gap: 1rem;
-    grid-row-gap: 1rem;
-
-}
-header{
-    /*grid-area: header;
-    grid-area: 1/1/2/4;
-}
-main{
-    /*grid-area: main;
-    grid-column-start: 1;
-    grid-row-start: 2;
-    grid-column-end: 3;
-    grid-row-end: 3;
-
-    display: grid;
-    grid-template-areas: "col-1 col-2 col-3";
-    justify-content: space-evenly;
-}
-
-#article-1{
-    /*
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-column-end: 2;
-    grid-row-end: 2;
-
-    /*kunne og skrevet: 
-    grid-area: col-1;
-    
-    grid-area: 1/1/2/2;
-
-}
-#article-2{
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-column-end: 3;
-    grid-row-end: 2;
-
-    /*kunne og skrevet: 
-    grid-area: col-2;
-    
-    
-}
-#article-3{
-    grid-column-start: 3;
-    grid-row-start: 1;
-    grid-column-end: 4;
-    grid-row-end: 2;
-    
-    /*kunne og skrevet: 
-    grid-area: col-3;
-    
-
-}
-
-aside{
-    /*grid-area: aside;
-    grid-column-start: 3;
-    grid-row-start: 2;
-    grid-column-end: 4;
-    grid-row-end: 3;
-}
-footer{
-    /*grid-area:footer;
-    grid-column-start: 1;
-    grid-row-start: 3;
-    grid-column-end: 4;
-    grid-row-end: 4;
-}
-*/
 
 main article{
     /*endret vidde bredde fra hva vi gjorde 05.08*/
-    max-width: 250px;
-    width: 100%;
+    flex-basis: 200px;
+    flex-grow: 1;
     border: 1px solid #d9d9d9;
     padding: 1rem;
+    background-color: #FFE3E1;
+    border-radius: 1rem;
 }
 
 /*la til bredcrumbs og fjernet default CSSS på ul elementet med id breadcrumbs*/
@@ -136,8 +83,6 @@ main article{
     padding: 0;
     margin: 0;
 }
-
-
 
 #breadcrumbs li::after{
     content: ">";
@@ -184,10 +129,22 @@ article img{
 
 
 footer{
-    background-color: rgb(80, 80, 80);
+    background-color: #FF9494;
     color: #fff;
     padding: 3rem 2rem;
 }
+.fa-solid.fa-house{
+    font-size: 30px;
+    color: rgb(255, 154, 114);
+    margin: 0 0.5rem
+}
+/*.fa-solid.fa-house::after{ 
+    content: "\f015";
+} - Dette er en annen måte å få icon inn på direkte i css*/
+.fa-solid.fa-house:hover{
+    color: rgb(37, 205, 214);
+}
+
 @media only screen and (min-width: 900px){
     #front-page-container{
         width: 100%;
@@ -199,5 +156,26 @@ footer{
                             "footer footer footer";
         grid-gap: 1rem;
         grid-row-gap: 1rem;
+    }
+    header nav{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+    #main-menu{
+        display: block !important;
+        position: static;
+        background-color: transparent;
+        width: fit-content;
+    }
+    #main-menu a{
+        color: #000000;
+    }
+    #main-menu li{
+        display: inline-block;
+        margin: 0 1rem
+    }
+    #ham-icon{
+        display: none;
     }
 }
